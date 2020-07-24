@@ -106,7 +106,7 @@ def response_path(path):
     mime_type = b""
     if os.path.isdir(path):
         for items in os.listdir(path):
-            content += str(items).encode()
+            content += (str(items)+"\n").encode()
         mime_type = b"text/plain"
 
     elif os.path.isfile(path):
